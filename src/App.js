@@ -10,13 +10,14 @@ import { buyItem, removeFeature } from './store/actions';
 const App = ({ buyItem, removeFeature, car, store, additionalPrice }) => {
   
 
-  const removeCarFeature = item => {
+  const removeCarFeature = id => {
     // dispatch an action here to remove an item
-    removeFeature(item)
+    removeFeature(id)
   };
 
-  const buyCarItem = item => {
+  const buyCarItem = (e, item) => {
     // dipsatch an action here to add an item
+    e.preventDefault()
     buyItem(item)
   };
 
@@ -24,10 +25,10 @@ const App = ({ buyItem, removeFeature, car, store, additionalPrice }) => {
     <div className="boxes">
       <div className="box">
         <Header car={car} />
-        <AddedFeatures car={car} />
+        <AddedFeatures car={car} remove={removeCarFeature}/>
       </div>
       <div className="box">
-        <AdditionalFeatures store={store} />
+        <AdditionalFeatures store={store} add={buyCarItem}/>
         <Total car={car} additionalPrice={additionalPrice} />
       </div>
     </div>

@@ -20,8 +20,8 @@ const initialState = {
       case "BUY_ITEM":
         return {
           ...state,
-          title: action.payload,
-          editing: !state.editing
+          additionalPrice: state.additionalPrice + action.payload.price,
+          car: { ...state.car, features: [...state.car.features, action.payload] }
         };
       case "REMOVE_FEATURE":
         return {
