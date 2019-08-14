@@ -3,18 +3,19 @@ html, body, #root {
 }
 body {
   background: #333;
-  margin: 0;
+  margin: auto;
   display: grid;
   padding: 3em;
   place-items: center;
 }
 .boxes {
   display: grid;
+  justify-items: center;
   grid-gap: 2em;
   grid-template-columns: repeat(2, minmax(350px, 1fr));
   grid-template-rows: auto;
 }
-.box {
+.box-1 {
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -34,9 +35,35 @@ body {
     }
   }
 }
+
+.box-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100%;
+  max-width: 80%;
+  h4 {
+    font-size: 20px;
+    margin: 0 0 1rem 0;
+  }
+  .content {
+    padding-top: 1em;
+  }
+  ol {
+    margin-left: 0;
+    li {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      font-weight: bold;
+    }
+  }
+}
+
 .button {
   background: hotpink;
   border: 1px solid transparent;
+  box-shadow: 1px 1px 10px black;
   color: white;
   margin-right: 1em;
   padding: .25em .75em;
@@ -46,4 +73,21 @@ body {
     border: 1px solid hotpink;
     color: #333;
   }
+  &:active {
+    box-shadow: none;
+  }
 }
+
+.total {
+  background: black;
+  padding: 0 2rem;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  h4 {
+    color: #fff;
+  }
+
+}
+
