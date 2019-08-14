@@ -23,11 +23,11 @@ const App = ({ buyItem, removeFeature, car, store, additionalPrice }) => {
 
   return (
     <div className="boxes">
-      <div className="box">
+      <div className="box box-1">
         <Header car={car} />
         <AddedFeatures car={car} remove={removeCarFeature}/>
       </div>
-      <div className="box">
+      <div className="box box-2">
         <AdditionalFeatures store={store} add={buyCarItem}/>
         <Total car={car} additionalPrice={additionalPrice} />
       </div>
